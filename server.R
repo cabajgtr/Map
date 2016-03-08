@@ -3,10 +3,10 @@ library(dplyr)
 library(ggplot2)
 library(data.table)
 library(choroplethr)
-source('County_Map.R')
+source('R/County_Map.R')
 data(continental_us_states)
 
-map_df <- readRDS('../data/map_df.RDS')
+map_df <- readRDS('data/map_df.RDS')
 
 PROD_HIER <- unique(select(ungroup(map_df),SEGMENT1, SEGMENT2, SEGMENT3, SEGMENT4)) %>% na.omit() %>% data.table
 BU <- c('ALL',as.character(unique(PROD_HIER$SEGMENT1)))
